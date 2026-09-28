@@ -1,0 +1,57 @@
+/*   Palette: green rgb(40,65,57) | sage rgb(128,144,118) | yellow rgb(248,231,148) | pink rgb(184,104,144) | ink rgb(17,20,25) */
+:root { --green: rgb(40,65,57); --sage: rgb(128,144,118); --yellow: rgb(101, 152, 95); --pink: rgb(60, 2, 31); --ink: rgb(17,20,25); }
+
+/* TASK 1: basic page styling (background, font, margin/padding) */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column;
+       background-color: var(--yellow); color: var(--ink);
+       font-family: "Times New Roman", Times, serif; font-size: 18px; }
+
+/* TASK 2: header and footer */
+header, footer { background-color: var(--green); color: white; text-align: center; padding: 22px; }
+header h1 { margin: 0; font-size: 44px; }
+header p { margin: 6px 0 0; font-style: italic; }
+footer p { margin: 0; }
+
+/* TASK 3: horizontal navigation bar */
+nav { background-color: var(--ink); text-align: center; padding: 12px; }
+nav a { display: inline-block; margin: 0 18px; color: white; text-decoration: none; font-size: 20px; }
+nav a:hover { color: var(--yellow); border-bottom: 2px solid var(--pink); }
+
+/* TASK 6: consistent layout (common margins, footer stays at bottom via flex) */
+main { flex: 1; width: 90%; max-width: 1000px; margin: 30px auto; }
+h2 { color: var(--green); }
+
+/* TASK 4: card (border, rounded corners, shadow, centred, background) */
+.card { max-width: 650px; margin: 25px auto; padding: 22px; background-color: white;
+        border: 2px solid var(--sage); border-radius: 12px; box-shadow: 0 4px 10px rgba(17,20,25,0.3); }
+.card h2 { margin-top: 0; }
+
+/* TASK 5: lists (ordered list, description list) */
+ol { list-style-type: upper-roman; padding-left: 35px; }
+ol li { margin-bottom: 12px; color: var(--pink); font-weight: bold; }
+dl { background-color: var(--sage); padding: 15px; border-radius: 8px; }
+dt { font-weight: bold; margin-top: 10px; }
+dd { margin: 4px 0 12px 20px; }
+
+/* Catalogue table (Experiment 1) */
+table { width: 100%; border-collapse: collapse; background-color: white; }
+th, td { border: 1px solid var(--sage); padding: 10px; text-align: left; }
+th { background-color: var(--green); color: white; }
+tr:nth-child(even) td { background-color: var(--yellow); }
+
+/* Forms: login and registration */
+form { max-width: 520px; margin: 20px auto; padding: 25px; background-color: white; border: 2px solid var(--sage); border-radius: 12px; }
+label { font-weight: bold; }
+input, select, textarea { width: 100%; padding: 10px; margin: 6px 0 14px; border: 1px solid var(--sage); border-radius: 6px; font-family: inherit; font-size: 17px; }
+input[type="checkbox"] { width: auto; margin-right: 6px; }
+button { width: 100%; padding: 12px; background-color: var(--pink); color: white; border: none; border-radius: 6px; font-family: inherit; font-size: 19px; cursor: pointer; }
+button:hover { background-color: var(--green); }
+.center { text-align: center; }
+
+/* Responsive (post-lab): stack nav links on small screens */
+@media screen and (max-width: 768px) {
+  nav a { display: block; margin: 10px; }
+  main { width: 95%; }
+  header h1 { font-size: 32px; }
+}
